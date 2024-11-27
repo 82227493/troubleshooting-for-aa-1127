@@ -6,14 +6,13 @@ metadata:
 spec:
   ingressClassName: ingress-internal
   rules:
-  # 사번으로 변경하세요
   - host: tr-82227493.ce-aa.kubepia.net
     http:
       paths:
       - path: /
+        pathType: Prefix
         backend:
           service:
             name: troubleshooting
             port:
               number: 8080
-        pathType: Prefix
